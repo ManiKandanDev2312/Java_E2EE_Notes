@@ -1,0 +1,24 @@
+
+---------------------------------------------------------
+Hibernate :
+---------------------------------------------------------
+
+Properties ( name )
+@Entity - which is used to identify the schema to store the values in database ( Default Entity Name is our Class Name ).
+@Table - which is used to mention out table name in the database ( Default Entity Name is our Table Name ).
+@Id - which is used to mention primary key of our table.
+@Column - which is used to mention column name for our Table. ( Default Variable name is our Column Name ).
+
+@Transient - which is used to avoid the column to store in database.
+
+@Embeddable - which is used to store the object type to the database.
+
+--------------------------------------------------------------------------------------------------------------
+Properties ( mappedBy , fetch )
+@OneToOne - which is used to create one to one Relationship Type in the database. 
+@OneToMany - which is used to create one to many Relationship Type in the database.  
+@ManyToOne - which is used to create Many to one Relationship Type in the database.
+@ManyToMany - which is used to create Many to Many Relationship Type in the database.
+
+@Cacheable - which is used to perform level 2 cache techniques.
+------------------------------------------------------------------------------------------------------------

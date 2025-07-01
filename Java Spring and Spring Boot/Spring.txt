@@ -1,0 +1,80 @@
+
+Spring Framework:
+--------------------------------------------------------------------------------------------
+
+* It is an Eco System.
+* which is used to build an Large scale Application. ( Enterprise Application ).
+* It is an Light weight Framework.
+* It is worked with POJOs  ( Plain Old Java Object ).
+* initially it introudce for Dependency Injection.
+* It can do Microservices, Reactive , Cloud, Web Apps, Serverless, Event Driven and Finally Batch.
+* it will creates Object and kept inside the Ioc Container.
+* by the use of DI we can inject objects into our application.
+----------------------------------------------------------------------------------------------------
+Abbreviations 
+-----------------------------------------------------------------------------------------------------
+Ioc - Inversion of Control ( Which means is used control the flow of Code for Example: its takes whole responsible for the Object ). ( Principle )
+
+DI - Dependency Injection ( Design Pattern )
+
+Beans - which means created and managed the objects by the spring  
+
+AOP - Aspect oriented programming which is used to cross cutting concerns lik logging
+
+ApplicationContext - which is used to get the bean ( Object ) from the Ioc Container which is presented in the JVM.
+
+BeanFactory is the older version of ApplicationContext.
+-----------------------------------------------------------------------------------------------------
+Scope
+-------------------------------------------------------------------------------------------------
+1.Singleton
+--------------------------------------------------------------------------------------------------
+
+*you try create a different objects but it return a same object as a output. it is a default for a scope for a bean.
+*it create a object by its own.
+
+For Example :
+in XML:
+<bean id = "alien" class = "com.maideveloper.com.manideveloper.Alien" scope = "singleton"></bean>
+
+ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+Alien obj1 = (Alien) applicationContext.getBean("alien");
+obj1.age = 10;
+System.out.println(obj1.age);//10
+
+Alien obj2 = (Alien) applicationContext.getBean("alien");
+System.out.println(obj2.age);//10
+------------------------------------------------------------------------------------------------------------
+2.prototype
+--------------------------------------------------------------------------------------------------
+
+*you try create a different objects each and every it creates a new Object.
+*it create a object only when you call getBean method.otherwise it won't create a object.
+
+For Example :
+in XML:
+<bean id = "alien" class = "com.maideveloper.com.manideveloper.Alien" scope = "prototype"></bean>
+
+ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+Alien obj1 = (Alien) applicationContext.getBean("alien");
+obj1.age = 10;
+System.out.println(obj1.age);//10
+
+Alien obj2 = (Alien) applicationContext.getBean("alien");
+System.out.println(obj2.age);//0
+------------------------------------------------------------------------------------------------------------
+Autowire
+---------------------------------------------------------------------------------------
+byName - which is used search the class by its name of interface.
+byType - which is used to search the class by it type under the same interface.
+---------------------------------------------------------------------------
+primary 
+-------------------------------------------------------------
+* in some time there will be a duplicated class with the same type. in that time primary is used to identify the
+primary Type of the interface.
+------------------------------------------------------------------------------------------
+Configuration 
+-----------------------------------------------------------------------------------------
+*There are two types of Configurations:
+1.XML Configuration - which is configure the spring by using of XML file
+2.Java Based Configuration - 

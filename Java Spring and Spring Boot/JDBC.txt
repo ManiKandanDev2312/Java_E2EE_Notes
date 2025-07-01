@@ -1,0 +1,106 @@
+JDBC - java database connectivity which is provided by JVM is comes under API (Application programme Interface)
+
+1. If we need to connect any database those database have their own DBMS ( Data base Management System ).
+2. We need to communicate between the application and database JDBC comes into the picture like an intermediate one.
+
+---------------------------------------------------
+Mapping :
+---------------------------------------------------
+
+one to one Relationship :
+----------------------------------------------------------------------------------------------------------
+* like one person have one laptop.
+
+for example :
+Note : 1 table is enough but 2 table is good
+we have two different table which is one for person and another one for laptop like :
+
+person Table we have name, pid , age, lid ( foreign key)
+Laptop Table we have lid,brand, RAM
+
+by this example we have to understand the concept which is one person is have only one laptop is called as
+one to one Relationship.
+
+Diagram : 
+
+                                 person 
+                                    |
+                                    |
+                                 laptop
+
+----------------------------------------------------------------------------------------------------------
+
+one to many relationship :
+---------------------------------------------------------------------------------------------------------
+
+* like one person having multiple laptops.
+
+for example :
+Note : 2 table is enough but 3 table is good
+
+we have two different table which is one for person and another one for laptop like :
+
+person Table we have name, pid , age 
+Laptop Table we have lid,brand, RAM , pid ( foreign key )
+
+by this example we have to understand the concept which is one person is having multiple laptops is called as
+one to many Relationship.
+
+Diagram : 
+
+                                 person 
+                                    |
+                                    |
+         -----------------------------------------------------------
+         |                          |                              |
+     Laptop 1                   Laptop 2                       Laptop 3
+
+--------------------------------------------------------------------------------------------------------------
+
+many to one relationship :
+---------------------------------------------------------------------------------------------------------
+
+* like multiple laptop belongs to one person.
+
+for example :
+Note : 2 table is enough but 3 table is good
+we have two different table which is one for person and another one for laptop like :
+
+person Table we have name, pid , age 
+Laptop Table we have lid,brand, RAM , pid ( foreign key )
+
+by this example we have to understand the concept which is multiple laptop is belongs to one person is called as
+many to one Relationship.
+
+Diagram : 
+
+             Laptop 1                         Laptop 2                     Laptop 3
+                |                                |                            |
+                |                                |                            |
+                ---------------------------------------------------------------
+                                                 | 
+                                                 |
+                                              Person
+----------------------------------------------------------------------------------------------------------------------
+
+Many to Many Relationship 
+---------------------------------------------------------------------------------------------------------------------
+ * Like in college any student can access any laptops in the lab.
+
+for Example :
+Note : 3 table is good
+one student can access many latops and the same time one laptops is belongs to many student is called as many to many
+Relationship.
+
+
+Diagram : 
+
+             Laptop 1                         Laptop 2                     Laptop 3
+                |                                |                            |
+                |                                |                            |
+                ---------------------------------------------------------------
+                |<..............................>|<..........................>| 
+                |                                |                            |
+             Student 1                        Student 2                    Student 2
+
+-------------------------------------------------------------------------------------------------------------------------

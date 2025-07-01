@@ -1,0 +1,70 @@
+
+ORM - Object Relational Mapping
+
+ORM which is helps to store object directly into the database.
+
+Hibernate basically improves productivity, caching, easy to migrating data from one database to another and finally smoothness of the application.
+
+---------------------------------------------------------------------------------------------------------------------
+Steps to be Followed to connect Database via hibernate:
+
+Step : 1 - create a class define data for the table (by the name of the Table)
+Step : 2 - create a variable and getter setter for those variables if you want print those variable create toString() function too.
+step : 3 - we need to declare as a @Entity because hibernate wants to know which class is to be like a schema.
+step : 4 - we need to declare as a @Id annotation which is used to identify the primary key of the table
+step : 5 - we need to configure the hibernate to identify which DBMS we are using by the help of configuration class.
+step : 6 - then we need to declare a class in the function of addAnnotatedClass.
+step : 7 - finally configure the xml(hibernate.cfg.xml) file by using configure function which is present inside the configuration class.
+step : 8 - we need session factory interface which is present inside the configuration class for the session. (it contains large memory capacity)
+step : 9 - then we need create a session interface which is used maintain a session like open or current.
+step : 10 - then save the data to the database using save function which is present inside the session interface.
+step : 11 - each request is called as transaction so we need to create a transaction interface by using of session.
+step : 12 - finally commit the transaction by using of transaction interface.
+----------------------------------------------------------------------------------------------------------------------
+
+in xml(hibernate.cfg.xml):
+--------------------------------------------------------------------------------------------------------------------
+hibernate-configuration tag is must to declare the configuration of hibernate with the attribute like xmlns and have the value like
+"https://www.hibernate.org/xsd/orm/cfg
+
+session-factory is used create a session.
+
+inside the session-factory we need declare property tag with the atribute of name having value like :
+
+hibernate.connection.driver_class
+hibernate.connection.url
+hibernate.connection.username
+hibernate.connection.password
+hibernate.hbm2ddl.auto - create , update 
+hibernate.show_sql
+hibernate.format_sql
+hibernate.dialect - each dbms having their own dialect so for mysql org.hibernate.dialect.MySQL8Dialect
+--------------------------------------------------------------------------------------------------------------------
+
+Refactoring :
+--------------------------------------------------------------------------------------------------------------------
+Note : try to close sessionfactory and session object which is used to optimize the code and try to reduce the lines of code.
+
+--------------------------------------------------------------------------------------------------------------------
+Lazy vs Eagger :
+-------------------------------------------------------------------------------------------------------------------
+* Lazy is default fetching type in hibernate which is retrieve only require data for the user avoids embeddable here. ( until user used Data not fetching )
+* Eagger is a fectching type which is used to retrive all the data from the database including embeddable too.
+-------------------------------------------------------------------------------------------------------------------
+Query ( HQL ) :
+-------------------------------------------------------------------------------------------------------------------
+which is used write a HQL query and Execute to filter data by a given conditions.
+
+For Example :
+
+Query query = session.CreateQuery( " from Laptop where ram = 32 " );
+
+List<Laptop> laptops = query.getResultList();
+-------------------------------------------------------------------------------------------------------------------------
+Get Vs Load:
+----------------------------------------------------------------------------------------------------------------------
+
+* Get is works like a Eager Loading which is fetch the data the user is used the data or not.
+* Load is works like a Lazy Loading which is not fetch the data until the user is used. ( alternate is byId with the getRefference Method )
+----------------------------------------------------------------------------------------------------------------------
+ 

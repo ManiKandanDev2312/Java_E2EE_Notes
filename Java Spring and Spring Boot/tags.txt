@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------
+Spring.xml
+-------------------------------------------------------------------------
+Note: first step we need to configure the xml file
+
+bean - which is used to mention the class in the spring framework. ( id, class, autowire, scope, primary, lazy-init)
+property - inside the bean tag there is a property tag which is use to inject the value or object inside the frameWork.( value, name )
+constructor-arg - which is used to inject the constructor in our framework ( value, index, ref, type , name )

@@ -1,0 +1,71 @@
+Java Concepts:
+
+
+New Concepts I learnt until now:
+
+1.jshell which is used to write and execute the java programme in command prompt itself.
+
+2.some sample commands of jshell like:
+
+-- /help intro - which is used to listout commands which we need to use in jshell.
+-- /list -all - this command is used to listout the statement which we perform perviously in jshell.
+-- /var - this command is used to listout the variables only.
+-- /exit - this command is used to exit from jshell.
+-- /reset - this command is used to reset the jshell.
+
+3.overflow and underflow concept in primitive data types is also called as Wraparounds.
+
+-- overlow condition - which means we try to store the value which is more than limit for the datatype. 
+-- underflow condition - which means we try to store the value which is lesser than limit for the datatype.
+
+Note : in this situation compiler does not throw any error (whenever we use expression apart from the literal values).
+
+For Example:
+int intMaxvalue = Integer.MAX_VALUE + 1: // overflow condition
+int intMinvalue = Integer.MIN_VALUE - 1: // underflow condition
+
+4.whenever we need to put a comma in integer value to easily identify like 1,000 instead of this we can use 1_000 is acceptable in Java.
+
+5.using the Expression while storing the value in variable like whole number is default consider a int so we try to store the value to 
+Byte and short datatype is throw an error.
+
+For Example:
+byte minByteValue = Byte.MIN_VALUE;
+bye myNewByteValue = (minByteValue/2);// its throw an error because without casting we can't store int to byte variable.
+
+6.usage of unicode in char datatype For Example: char uniCode = '\u0044'; output : 'D'.
+
+7.Create a boolean variable by using this prefix like is or has both have different meaning for the variable.
+For Example:
+is : 
+isValid
+isEmployeeID
+isSubcriptionType
+
+has:
+hasChild
+hasSubcription
+
+8.String are mutable that means it creates a new string while try to concatenate instead of string for this process we are having String Builder for that
+Because that is immutable.
+
+9.character can't perform concatenate the character which we are provided instead character changes their given character to ASCII value of character in 
+numbers after that they perform concatenate process it returns single integer Value.
+
+For Example:
+
+char firstChar = 'A'; char secondChar = 'B' ; System.out.print(firstChar + secondChar); // 131
+
+10. character can be contatenate by using like this:
+
+For Example:
+
+char firstChar = 'A'; char secondChar = 'B' ; System.out.print( "" + firstChar + secondChar); // AB
+
+11. compound operator is can't throw the datatype error.
+
+For Example:
+int a = 1;
+
+a += 2.5;//3 because its defines a = (datatype) (a + 2.5); actually here pereform internal cast.
+

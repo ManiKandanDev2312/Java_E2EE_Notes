@@ -1,0 +1,43 @@
+Maven Repositories:
+
+Why we need Maven?
+ instead of we download lot of jar file for our project we can easily access the jar by the use of Maven by the dependencies tag which is present in the 
+pom.xml file its automatically download the needed jar file for our by mentioning their artifact Id, group Id and their version.
+
+
+How Maven Works?
+
+We need some dependencies for our project means we try to mention artifact Id, Group Id and verison for that particular dependency inside the dependency 
+tag. 
+
+Note : every time we try to use new dependency maven take a copy and stored in the local folder which is more useful to fetch those dependency.
+
+important Note : Before install the dependency check whether this version vulnerable or not.	
+
+Try to catch the flow by this flowchart.
+
+                                                   Maven pom.xml
+                                                         |
+                                                         |
+                 Search the dependency in the local file which is repository file (inside the maven folder like .m2 - Repository)
+                                                         |
+                                                         |
+                              Company Based Respositories for that particular dependency
+                                                         |
+                                                         |
+                                    If it is not there we can't use this dependency
+                    (request from the security Team to add this dependency to our company repository)
+
+
+Archetype :
+
+It is used to create a structure our project based upon our need.
+
+for Example:
+ spring-mvc (Archetype) which gives complete structure of our project based on spring mvc project.
+
+
+
+
+
+                                                                          

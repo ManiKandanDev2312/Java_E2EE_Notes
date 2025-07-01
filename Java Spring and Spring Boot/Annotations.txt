@@ -1,0 +1,15 @@
+---------------------------------------------
+Spring Boot :
+----------------------------------------------
+
+@Component - which is used to tell spring to manage this component which means a class.
+@Autowired - which is used to call the one component to another component this process is called as wiring.
+
+
+------------------------------------------------------------------------------------
+Spring
+----------------------------------------------------------------------
+
+@ConstructorProperties - which is used pass the refference of the variable for the constructor.
+@Configuration - which is used to configure the spring by using java based Configuration.
+@Bean - which is used to identify the Bean by spring in java based Configuration.

@@ -1,0 +1,10 @@
+
+Libraries :
+-------------------------------------------------
+1. Hibernate
+2. MySQL
+3. jcache
+4. ehcache
+
+5. jaxb ( glass fish ) - which is used handle the dependency errors.
+6. spring context.
