@@ -1,15 +1,17 @@
 ---------------------------------------------
-Spring Boot :
+Spring and Spring Boot :
 ----------------------------------------------
 
 @Component - which is used to tell spring to manage this component which means a class.
 @Autowired - which is used to call the one component to another component this process is called as wiring.
-
-
-------------------------------------------------------------------------------------
-Spring
-----------------------------------------------------------------------
-
 @ConstructorProperties - which is used pass the refference of the variable for the constructor.
 @Configuration - which is used to configure the spring by using java based Configuration.
 @Bean - which is used to identify the Bean by spring in java based Configuration.
+@Scope - which is used to set singleton or prototype for a bean.
+@Qualifier - which is act as a ref in XMl we can set a object which is primary to an interface. 
+@Primary - which is used to identify the primary object for a interface.
+@ComponentScan  - which is used to scan the entire package or folder which class having @Component Annotation those classes are manage by the spring.
+@Value - which is used to inject the value for the variable in  Java Based Cpnfigurations.
+@Service - which is used to declare the class is a service class.
+@Repository - which is used to declare the class is a repository class and then this is the class is responsible for communicating with 
+the database.

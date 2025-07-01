@@ -1,0 +1,21 @@
+------------------------------------------------------------------------------------
+Spring Boot:
+------------------------------------------------------------------------------------
+There are Three different layers to communicate with the Database. Like for Example:
+
+
+             Client (which any application Like Website or Any apps )
+                                       |
+                                    Layers
+                                       |
+                                       |
+             ----------------------------------------------------------
+             |                         |                              |
+         Controller                Services          Repository ( DAO - Data Access Object )
+                                                                      |
+                                                                      |
+                                                                  Database
+
+* Controller - which is used to manage the Request and response from the Client and the Database.
+* Service - which is used to implement any Data modification or implementing any functionalities for the Response Data.
+* Repository - which is used to communicate with database return the data to the service to process.

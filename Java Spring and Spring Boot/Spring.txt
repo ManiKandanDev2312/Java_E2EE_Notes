@@ -77,4 +77,25 @@ Configuration
 -----------------------------------------------------------------------------------------
 *There are two types of Configurations:
 1.XML Configuration - which is configure the spring by using of XML file
-2.Java Based Configuration - 
+2.Java Based Configuration - which is used inject the object through java class.
+
+-------------------------------------------------------------------------------
+
+XML Configuration
+-------------------------------------------------------------------------
+we need to access Ioc by using of ClassPathXmlApplicationContext.
+------------------------------------------------------------------------
+
+Java Based Configuration
+-----------------------------------------------------------------------------
+we need to access Ioc by AnnotationConfigApplicationContext
+--------------------------------------------------------------------------
+
+Injection
+----------------------------------------------------------------------------
+Injection Having three level of Injections:
+
+Field Injection
+Constructor Injection
+setter Injection
+--------------------------------------------------------------------------
