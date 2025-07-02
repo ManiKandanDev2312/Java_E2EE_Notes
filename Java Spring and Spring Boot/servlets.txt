@@ -1,0 +1,36 @@
+----------------------------------------------------
+Java Servlets
+--------------------------------------------
+
+* servlets - which means it is used to manage the request and response to and from the server.
+
+* we need to extends servlet class to HttpServlet class.
+
+* service method is used to whenever request or response is generated this method is runs first. having two parameters like HttpRequest and 
+HttpResponse.
+
+* here we are using Embedded Tomcat server as server.
+
+* To Start the server.
+
+Note : we need to create a object for the Tomcat class like:
+
+Tomcat tomcat = new Tomcat();
+
+tomcat.start(); // this line is used to start the server the default port number is 8080
+
+tomcat.getServer().await(); // this line is used to hold on the server for our requests.
+
+---------------------------------------------------------------------------
+Mapping
+----------------------------------------------------------------------
+
+* we need the servlet class to the url which is used to send the request or response.
+
+for Example :
+
+Context context = tomcat.addContext( contextName :"", directoryPath :null );
+tomcat.addServlet(context, ServiceName : "HelloRequest" , ServiceClass : new HelloRequest() );
+context.addMappingDecoded( url: "/hello, ServiceName : "HelloRequest" );
+
+Note : Mapping is done before the server start.

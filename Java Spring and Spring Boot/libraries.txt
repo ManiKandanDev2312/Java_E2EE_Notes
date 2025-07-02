@@ -8,3 +8,5 @@ Libraries :
 
 5. jaxb ( glass fish ) - which is used handle the dependency errors.
 6. spring context.
+7.jakarta servlet
+8.tomcat embed core

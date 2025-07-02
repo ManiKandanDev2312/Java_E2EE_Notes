@@ -15,3 +15,9 @@ Spring and Spring Boot :
 @Service - which is used to declare the class is a service class.
 @Repository - which is used to declare the class is a repository class and then this is the class is responsible for communicating with 
 the database.
+
+-----------------------------------------------
+Servlet 
+---------------------------------------------
+
+@WebServlet("url") - this annotation is used to mention the url to send the request or response.

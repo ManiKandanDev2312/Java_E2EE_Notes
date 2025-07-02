@@ -1,0 +1,27 @@
+------------------------------------------------------------------------------------------------
+Spring JDBC
+---------------------------------------------------------------------------------------------
+
+* we are JDBC Template which is use to perform CRUD operations on the Database.
+
+for Example :
+
+@Autowired
+private JDBCTemplate jdbcTemplate;
+
+
+* we need schema and data file is need to load the data to the database. ( file should be in .sql format )
+
+1. RowMapper :
+    * which is used to map the row in the table to the object which we are created. ( its get the from ResultSet )
+For Example:
+
+RowMapper rowMapper = ( rs, rowNum ) -> {
+
+Student student = new Student();
+student.setRollNo(rs.getInt("rollNo");
+student.setName(rs.getString("name");
+student.setMarks(rs.getInt("marks");
+
+return student;
+}
