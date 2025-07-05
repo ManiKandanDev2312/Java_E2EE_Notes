@@ -21,3 +21,5 @@ Servlet
 ---------------------------------------------
 
 @WebServlet("url") - this annotation is used to mention the url to send the request or response.
+@Controller - which is used define the class as a Controller.
+@RequestMapping - which is used to map the url in Controller.

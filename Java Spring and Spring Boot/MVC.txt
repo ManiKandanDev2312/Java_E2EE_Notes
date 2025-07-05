@@ -1,0 +1,13 @@
+-----------------------------------------------------------
+MVC ( Model View Controller )
+------------------------------------------------------------
+
+lets have a diagramatic look :
+
+                                                  Client ( which means any kind of frontend pages )
+                                                                            |
+                                                                            |                  Processing Data
+                                                                        Controller ( Servlet ) ---------------- Model ( Data (class) ) -------- Database
+                                                                            |
+                                                                            |
+                                                                     View ( JSP Pages )

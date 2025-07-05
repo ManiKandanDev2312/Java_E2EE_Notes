@@ -89,7 +89,7 @@ Many to Many Relationship
 
 for Example :
 Note : 3 table is good
-one student can access many latops and the same time one laptops is belongs to many student is called as many to many
+one student can access many laptops and the same time one laptops is belongs to many student is called as many to many
 Relationship.
 
 
