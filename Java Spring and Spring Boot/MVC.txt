@@ -11,3 +11,12 @@ lets have a diagramatic look :
                                                                             |
                                                                             |
                                                                      View ( JSP Pages )
+------------------------------------------------------------
+Dispatcher Servlet
+---------------------------------------------------------
+* which is the front Controller for the all Controller which means its the responsible for the request for the particular Controller.
+* simply says like this controller used to dispatch request to the respective controller.
+-------------------------------------------------------------------------------
+
+DTO = Data Transferring Objects ( which is used to transfer the data between the layers )
+REST - Representational state transfer. 

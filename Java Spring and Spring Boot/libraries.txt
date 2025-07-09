@@ -11,3 +11,6 @@ Libraries :
 7.jakarta servlet
 8.tomcat embed core
 9.tomcat Jasper
+10.Spring mvc
+11.lombok
+13.jakarta.servlet.jsp.jstl
