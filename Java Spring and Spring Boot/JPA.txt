@@ -1,0 +1,6 @@
+-------------------------------------------------------------------
+JPA - Java Presistance API 
+-----------------------------------------------------------------
+
+1. JPQL - Java Presistence Query Language
+2. DSL - Domain Specific Language

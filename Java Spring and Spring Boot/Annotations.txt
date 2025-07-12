@@ -35,3 +35,5 @@ Servlet
 @CrossOrigin - which is used to connect the different framework as a frontend.
 @PathVariable - which is used to identity the dynamic value which is send by the URL.
 @ResquestBody - which is used to get the Data from the URL By using PostMapping.
+@PutMapping - which is used to handle the put request.
+@DeleteMapping - which is used to handle the delete request.

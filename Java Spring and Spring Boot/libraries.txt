@@ -13,4 +13,5 @@ Libraries :
 9.tomcat Jasper
 10.Spring mvc
 11.lombok
-13.jakarta.servlet.jsp.jstl
+12.jakarta.servlet.jsp.jstl
+13.jackson dataformat xml
