@@ -37,3 +37,4 @@ Servlet
 @ResquestBody - which is used to get the Data from the URL By using PostMapping.
 @PutMapping - which is used to handle the put request.
 @DeleteMapping - which is used to handle the delete request.
+@RequestPart - which is used to separate the value comes from the client into parts.

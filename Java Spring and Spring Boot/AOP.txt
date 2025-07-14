@@ -1,0 +1,16 @@
+------------------------------------------------------------------
+AOP - Aspect Oriented Programming
+-------------------------------------------------------------------
+
+1. Join Point ( when ) - it triggers when the action is occurred.
+2. Advice ( what ) - it triggers what would be happen.
+3. Aspect ( where-conceptual ) - the class which having the Loggings.
+4. Point Cut ( where-operational ) - it trigger when the notable action is occurred.
+5. Target Object ( whom ) - it is used to target the particular object.
+6. Weaving ( How ) - which is used to connect the Loggings.
+7. Proxy ( The Double )  - 
+
+---------------------------------------------------------------
+Annotations
+--------------------------------------------------------------
+@Aspect - which is used to declare the class as aspect which means its control the logging page.
