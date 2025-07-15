@@ -7,7 +7,7 @@ Properties ( name )
 @Entity - which is used to identify the schema to store the values in database ( Default Entity Name is our Class Name ).
 @Table - which is used to mention out table name in the database ( Default Entity Name is our Table Name ).
 @Id - which is used to mention primary key of our table.
-@GeneratedValue - which is used to like Autoincrement in SQL. which having strategy attribute with the value like GenerationType.Indentity
+@GeneratedValue - which is used to like Auto increment in SQL. which having strategy attribute with the value like GenerationType.Indentity
 @Column - which is used to mention column name for our Table. ( Default Variable name is our Column Name ).
 
 @Transient - which is used to avoid the column to store in database.

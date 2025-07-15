@@ -34,7 +34,7 @@ Servlet
 @RestController - which is used to declare the Controller only having Data in the return Statement not a view.
 @CrossOrigin - which is used to connect the different framework as a frontend.
 @PathVariable - which is used to identity the dynamic value which is send by the URL.
-@ResquestBody - which is used to get the Data from the URL By using PostMapping.
+@RequestBody - which is used to get the Data from the URL By using PostMapping.
 @PutMapping - which is used to handle the put request.
 @DeleteMapping - which is used to handle the delete request.
 @RequestPart - which is used to separate the value comes from the client into parts.

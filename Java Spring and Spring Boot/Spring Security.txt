@@ -17,6 +17,8 @@ Configuration
 --------------------------------------------------------------------------------------------------------------
 1. we need to configure the filter of Spring Security for our own conditions.
 
+Important Note : Before Spring Security 6 We are using WebSecurityConfigurerAdapter for the SecurityFilterChain
+
 Note: SecurityFilterChain
 CSRF Disable - by using HttpSecurity.customizer.
 Authorize All Request - by using HttpSecurity.authorizeHttpRequests
@@ -25,13 +27,20 @@ sessionManagement - which used to keep session as stateless by using of sessionC
 return SecurityFilterChain by using HttpSecurity
 
 Note : UserDetailsService
-
+UserDetails class which is used to define the user by their name, password, role.
 return InMemoryUserDetailsManager it is indirectly return the Object of UserDetailsService
+
+Note : AuthenticationProvider
+DaoAuthenticationProvider which is used to provide a authentication for the user.
+by using this class we got some methods like setUserDetailsService and setPasswordEncoder.
+return AuthenticationProvider pobject for this bean
+
 
 ------------------------------------------------------------------------------------------------
 Annotations
 ---------------------------------------------------------------------------------------------
 @EnableWebSecurity - which is used to enable security features here.
+@PreAuthorize - which is used to define method-level security
 
 
 
