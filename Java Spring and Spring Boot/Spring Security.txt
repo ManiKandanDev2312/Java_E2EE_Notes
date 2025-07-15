@@ -1,0 +1,37 @@
+---------------------------------------------------------------------------------------------------
+Spring Security
+--------------------------------------------------------------------------------------------------
+OWASP - Open Web Application Security Project
+CSRF - Cross site Request Forgery
+
+Note : Spring Security having multiple filter which is used to filter the Request by some condition before reach to the servlet.
+
+
+1. Each and every login by using Spring Security its create separate session id for that. ( Method Name getSession )
+2. we can access the session id by HttpServletRequest.
+3. apart from get request remaining request are need to CSRF token to access the url.
+4. we can access the CSRF token by using the method which is present inside the HttpServletRequest name is getAttribute.
+
+---------------------------------------------------------------------------------------------------------------------
+Configuration
+--------------------------------------------------------------------------------------------------------------
+1. we need to configure the filter of Spring Security for our own conditions.
+
+Note: SecurityFilterChain
+CSRF Disable - by using HttpSecurity.customizer.
+Authorize All Request - by using HttpSecurity.authorizeHttpRequests
+httpBasic - which leaves Customizer.withDefaults
+sessionManagement - which used to keep session as stateless by using of sessionCreationPolicy
+return SecurityFilterChain by using HttpSecurity
+
+Note : UserDetailsService
+
+return InMemoryUserDetailsManager it is indirectly return the Object of UserDetailsService
+
+------------------------------------------------------------------------------------------------
+Annotations
+---------------------------------------------------------------------------------------------
+@EnableWebSecurity - which is used to enable security features here.
+
+
+
