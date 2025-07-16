@@ -42,5 +42,16 @@ Annotations
 @EnableWebSecurity - which is used to enable security features here.
 @PreAuthorize - which is used to define method-level security
 
+-------------------------------------------------------------------------------------------------
+Architecture
+-------------------------------------------------------------------------------------------------
+SecurityConfig - which is the class is used to configure the security for our application. like AuthenticationProvider, SecurityFilterChain etc..
+UserDetailsService - which is the Service is used to Validate the userDetails retrieve from the Repo Layer.
+UserRepository - which is the Repository is used to communicate with database.
+User - which is the Model is used to define schema for the User.
+UserPrinciple - which is the Service is used to verify the Authorization for the user,token is experied or not and finally the active is or not. 
+                                        
+                                                          
+
 
 
