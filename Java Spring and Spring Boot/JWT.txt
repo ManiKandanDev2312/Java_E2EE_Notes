@@ -1,0 +1,33 @@
+----------------------------------------------------------------------
+JWT - Json Web Token
+----------------------------------------------------------------------
+
+Symmatric Key - same key having both the sender and the receiver side.
+Asymmatric key - both the sender and the receiver side having different key for accessing.
+
+Asymmatric keys like public and private key
+
+public key - which is the key is able to saw publically by everyone.
+private key - which is the key is able to saw only by the ADMIN.
+
+
+----------------------------------------------------------------------
+Digital Signature
+----------------------------------------------------------------------
+
+which means consider there are three users A,B and C.
+
+1. A is sender for the message so he encrypted by its own private key.
+2. B can only Decrypt the message by the use A public key.
+
+which means its shows the real sender of the message.
+
+3. but if the c comes into the picture c can modify the message by using A public key
+but B can't Decrypt by A public key because the public key owner is changes to A to C.
+
+so, if we want to overcome this issue by using dual encryption by using
+
+1. A both public and private key to encrypt 
+2. c can't Decrypt entire message because c know public key not the private key.
+3. Now B can know sender by using public key of the A to verify the sender and can fully
+   Decrypt by using their own private key.
