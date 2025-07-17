@@ -12,6 +12,13 @@ Note : Spring Security having multiple filter which is used to filter the Reques
 3. apart from get request remaining request are need to CSRF token to access the url.
 4. we can access the CSRF token by using the method which is present inside the HttpServletRequest name is getAttribute.
 
+Note: 
+By Setting Custom password and username by using
+spring.security.user.name = username
+spring.security.user.password =  password
+
+same site
+server.servlet.session.cookie.same-site = strict
 ---------------------------------------------------------------------------------------------------------------------
 Configuration
 --------------------------------------------------------------------------------------------------------------
@@ -35,6 +42,53 @@ DaoAuthenticationProvider which is used to provide a authentication for the user
 by using this class we got some methods like setUserDetailsService and setPasswordEncoder.
 return AuthenticationProvider pobject for this bean
 
+----------------------------------------------------------------------------------------------------
+SecurityFilterChain
+---------------------------------------------------------------------------------------------------
+
+By the use HttpSecurity we can modify the filters like CSRF,httpBasic,sessionManagement and authroizeHttpRequest.
+
+like CSRF:
+Customizer is an interface
+CsrfConfigurer is a class
+HttpSecurity is a Class
+now we can use Customizer<CsrfConfigurer<HttpSecurity>> for disabling the CSRF token.
+
+like httpBasic:
+which is used to get username and the password ByDefault browser prompt.
+
+httpBasic(Customizer.withDefaults());
+
+like authorizeHttpRequest
+
+which is authorize the request are requested by the client.
+AuthorizationManagerRequestMatcherRegistry is a class
+
+Customizer<AuthorizationManagerRequestMatcherRegistry<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry>
+
+like sessionManagement
+which used to create a new session id for every refresh.
+Customizer<SessionManagementConfigurer<HttpSecurity>>
+
+-----------------------------------------------------------------------------------------------------------
+UserDetailsService
+------------------------------------------------------------------------------------------------------------
+
+we need to create a Entity for the User if the UserDetails where retrive from the Database.
+
+or otherwise.
+
+UserDetails User = User.withDefaultPasswordEncoder().username("useraname").password("password").roles("role of the user").build();
+
+finally we need to return UserDeatilsService object but it is an interface right so we can use InMemoryUserDetailsManager(user) to 
+return object of UserDetails.
+
+------------------------------------------------------------------------------------------------------------------------
+AuthenticationProvider
+----------------------------------------------------------------------------------------------------------------------
+which is used to authenticate the user is valid or not
+
+by using DaoAuthenticationProvider class we having objects like setUserDetailsService and setPasswordEncoder
 
 ------------------------------------------------------------------------------------------------
 Annotations
