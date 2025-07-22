@@ -31,3 +31,58 @@ so, if we want to overcome this issue by using dual encryption by using
 2. c can't Decrypt entire message because c know public key not the private key.
 3. Now B can know sender by using public key of the A to verify the sender and can fully
    Decrypt by using their own private key.
+
+------------------------------------------------------------------------
+Why JWT
+---------------------------------------------------------------------------
+Note : communicate the data with two different parties JWT is used to encrypt and decrypt the data for our security purpose.
+
+By use of Json Web Token we won't need to login every request for the server it maintains our credentials in Encrypted format
+which is used to validate ourself for every request.it contains Three Layers.
+
+Header - which is used to kept type and algorithm of Encrpting token is presented.
+Payload - User Details, token issued and the expire time of the Token.
+Signature - which is used to kept our secret key to verify its authorized request for our Server.
+
+By using HS256 Algorithm to generate a token here.
+
+-------------------------------------------------------------------------------
+Require Dependency
+--------------------------------------------------------------------------------
+Jwt-api
+Jwt-Jackson
+jwt-impl
+
+-----------------------------------------------------------------------------------------------------------
+Architecture
+-----------------------------------------------------------------------------------------------------------
+JWT Token Generation:
+
+we need to create request for both register and login give authenticated for this url by using requestMatcher()
+                                           |
+                Using Authentication class which is used to authenticate the user
+ by using authenticationManager.authenticate(new UsernamePasswordAuthentication(username, password);
+                                           |
+    Generate a Token by using jwts.builder() method here we need to pass our Secret key
+                                           |
+ by using hmacShaKeyFor method to pass the decoded our by using Decoders.Base64.decode() it returns Byte[] Method secrete key
+                                           |
+ By using of KeyGenerator.getInstance("Algorithm") then we need to generate a key using generateKey() its return SecretKey
+             We need to convert the Key to String Base64.getEncoder().encodeToString(genEncoded());
+
+JWT Filter :
+
+we need to addFilterBefore method in HttpSecurity in AuthenticationProvider Bean like Before UsernamePasswordAuthenticationFilter.class
+                                                       |
+                 We need to create JWTFilter to Authenticate the User by Extends OncePerRequestFilter
+It implements the method called doFilterInternal inside this method we need check already there is SecurityContextHolder Object  
+or else we need to generate a token and stored in the SecurityContextHolder object. we need to add ExtractUsername method
+and validateToken method end of the line we need continue the other filters by usign filterChain.doFilter(request,response);                                                   
+
+-----------------------------------------------------------------
+AuthenticationManager
+---------------------------------------------------------------------
+
+we need to create AuthenticationManager Bean which is used to authenticate the user.
+
+if we need to get AuthenticationManager Object by using AuthenticationConfiguration.getAuthenticationManager(); 
