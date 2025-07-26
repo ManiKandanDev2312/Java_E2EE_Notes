@@ -1,0 +1,140 @@
+---------------------------------------------------------------
+Docker Container
+----------------------------------------------------------
+
+Problem statement :
+
+like we build a application by our own os which contains all the necessary softwares for that application
+to run. so that application runs smoothly in our machine.but what about other machine or os.
+
+------------------------------------------------------------------------------------------------
+Virtuvalisation
+---------------------------------------------------------------------------------------------
+
+
+For this Problem there will be the old solution which is Virtualisation:
+
+Which means simply a virtual machine thats it.
+
+the pyramid of the Architect is 
+
+
+Guest OS - which is another os from the virutal machine 
+Virutal Machine (Hypervisor) - which is used to host dual os in our machine.
+Host OS - which is our current machine os.
+Hardware - which is like our machine hardware like motherboard, cpu and ram etc.
+
+so, solution here is we can host our application in Guest OS layer and setup all the configuration for
+that application in that Hypervisor and gave to other team like testing, Devops etc.which is running 
+condition of the application.so the problem is solved right.
+
+like we gave the complete OS for another team manage our application.
+
+The problem is : It may take lots power from our hardware it took our machine slow because we 
+different Guest os for the different application.
+
+-----------------------------------------------------------------------------------------------------------
+Containerization
+------------------------------------------------------------------------------------------------------------
+
+which is used to cotain our entire project with setup inside the container.
+
+that container pass through the entrie process upto deployment of our application.
+
+here we dont need any guest os but we need Docker to maintain our application with in the Container.
+
+---------------------------------------------------------------------------------------------------------
+Docker
+--------------------------------------------------------------------------------------------------
+
+There are number of components:
+
+Docker Engine
+Docker Hub
+Volumes
+Docker Compose
+
+Docker Commands:
+
+docker --version - which is used to verify the version of the docker in our machine.
+docker run Imagename:Version - which is used to pull and run image from the docker registry.
+docker ps - which is used to return the current running container.
+docker ps -a - which is used to return the all containers we have.
+docker images - which is used to list out the entire images we have.
+docker help - which is used to list out the commands which we have in docker.
+docker rm containerID - which is used to remove one or more container.
+docker rmi ImageID - which is used to remove one or more image.
+docker search imageName - which is used to search the image in the Docker Registry.
+docker pull imageName - which is used to pull the image from the Docker Registry.
+docker create imageName - which is used to create a container by using this imageName.
+docker start containerID - which is used to start the container in docker.
+docker stop containerID - which is used to stop the container in docker.
+docker pause containerID - which is used to pause the container in docker.
+
+docker run -it ImageName - which is used to run the container continously.
+docker exec containerID ls -a - which is used to list out the entire files inside the container.
+docker cp filePath containerName or containerID:filePathToCopy - which is used to copy the local file into the docker container.
+docker commit containerName imageName:versionType - which is used to create our own image in docker container.
+docker commit --change='CMD ["java","-jar","/tmp/jarName"]' conatinerName imageName:VersionType - which is used to create our image with the command we mentioned in the container.
+docker run -p localport:dockerport imageName - which is used to merge our localport number to docker port number.
+
+docker build -t imageName:tagName . - which is used to build the image by the use of dockerfile.
+docker-compose up --build - which is used to run the docker compose which is used to create multiple containers for the same project.
+--------------------------------------------------------------------------------------------------
+Docker Architecture
+----------------------------------------------------------------------------------------------
+
+                                     Docker Client 
+                                           |
+                                         Docker --- Daemon -- Image --container --network --volumes.
+                                           |
+                                        Registry
+
+--------------------------------------------------------------
+docker file
+-----------------------------------------------------------------------------
+From imagName
+Add  filePathTocopy  filepathToPaste
+command ["java","-jar","filename"]
+
+-----------------------------------------------------------------------
+docker-compose file
+-----------------------------------------------------------------------
+
+version ""
+
+services:
+
+app:
+  build: .
+  ports: 
+      - "8090:8090"
+  networks:
+     -network-name
+
+postgres:
+    
+     image: imageName
+     environment:
+        username:
+        password:
+        DB:
+
+     ports:
+       -"5677:5677"
+     networks:
+      -network-name
+     Volumes:
+       -vloumnName: pathToStore (/var/lib/postgresql/data)
+
+network:
+     networkName:
+        driver: bridge | host
+
+volumes:
+    volumnName:
+       
+    
+
+
+
